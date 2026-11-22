@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Transaksi - EduFarm</title>
+  <link rel="stylesheet" href="./style.css">
+  
+  <!-- LINK IKON GOOGLE (WAJIB ADA) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header Bersih Tanpa Panah Kembali -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="/assets/images/logo.png" alt="Logo" class="header-logo">
+      <h2>Catatan Transaksi</h2>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="form-box">
+      <form id="form-transaksi">
+        <div class="form-group">
+          <label>Keterangan</label>
+          <input type="text" id="ket" placeholder="Contoh: Beli Pakan" required>
+        </div>
+        <div class="form-group">
+          <label>Nominal (Rp)</label>
+          <input type="number" id="nominal" placeholder="Contoh: 150000" required>
+        </div>
+        <div class="form-group">
+          <label>Tipe Transaksi</label>
+          <select id="tipe">
+            <option value="pengeluaran">Pengeluaran</option>
+            <option value="pemasukan">Pemasukan</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Simpan Transaksi</button>
+      </form>
+    </div>
+    
+    <h3>Riwayat Transaksi</h3>
+    <div id="list-transaksi" class="card-list"></div>
+  </main>
+
+  <!-- NAVIGASI BAWAH DENGAN IKON -->
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item">
+      <span class="material-symbols-rounded">home</span>
+      <span>Beranda</span>
+    </a>
+    <a href="data-ternak.html" class="nav-item">
+      <span class="material-symbols-rounded">list_alt</span>
+      <span>Ternak</span>
+    </a>
+    <a href="transaksi.html" class="nav-item active">
+      <span class="material-symbols-rounded">receipt_long</span>
+      <span>Transaksi</span>
+    </a>
+    <a href="hasil-ternak.html" class="nav-item">
+      <span class="material-symbols-rounded">compost</span>
+      <span>Produksi</span>
+    </a>
+    <a href="materi.html" class="nav-item">
+      <span class="material-symbols-rounded">menu_book</span>
+      <span>Edukasi</span>
+    </a>
+    <a href="profil.html" class="nav-item">
+      <span class="material-symbols-rounded">person</span>
+      <span>Profil</span>
+    </a>
+  </nav>
+
+  <script type="module" src="/src/services/TransaksiService.ts"></script>
+</body>
+</html>

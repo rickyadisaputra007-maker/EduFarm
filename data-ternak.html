@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Data Ternak - EduFarm</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="/assets/images/logo.png" alt="Logo" class="header-logo">
+      <h2>Data Ternak</h2>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="form-box">
+      <form id="form-ternak">
+        <div class="form-group">
+          <label>Nama Ternak</label>
+          <input type="text" id="nama-ternak" placeholder="Contoh: Sapi Limosin" required>
+        </div>
+        <div class="form-group">
+          <label>Jenis Ternak</label>
+          
+          <!-- Input Datalist: Bisa dipilih dari daftar atau diketik manual -->
+          <input type="text" id="jenis-ternak" list="ternak-list" placeholder="Pilih atau ketik jenis ternak..." required autocomplete="off">
+          
+          <datalist id="ternak-list">
+            <option value="Sapi"></option>
+            <option value="Ayam"></option>
+            <option value="Kambing"></option>
+            <option value="Lele"></option>
+            <option value="Bebek"></option>
+          </datalist>
+          
+        </div>
+          
+        </div>
+        <div class="form-group">
+          <label>Berat Badan (kg)</label>
+          <input type="number" id="berat-ternak" placeholder="Contoh: 120" required>
+        </div>
+        <button type="submit" id="btn-submit" class="btn">Simpan Data</button>
+      </form>
+    </div>
+    
+    <h3>Daftar Ternak</h3>
+    <div id="list-ternak" class="card-list"></div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item">
+      <span class="material-symbols-rounded">home</span>
+      <span>Beranda</span>
+    </a>
+    <a href="data-ternak.html" class="nav-item active">
+      <span class="material-symbols-rounded">list_alt</span>
+      <span>Ternak</span>
+    </a>
+    <a href="transaksi.html" class="nav-item">
+      <span class="material-symbols-rounded">receipt_long</span>
+      <span>Transaksi</span>
+    </a>
+    <a href="hasil-ternak.html" class="nav-item">
+      <span class="material-symbols-rounded">compost</span>
+      <span>Produksi</span>
+    </a>
+    <a href="materi.html" class="nav-item">
+      <span class="material-symbols-rounded">menu_book</span>
+      <span>Edukasi</span>
+    </a>
+    <a href="profil.html" class="nav-item">
+      <span class="material-symbols-rounded">person</span>
+      <span>Profil</span>
+    </a>
+  </nav>
+
+  <script type="module" src="/src/services/TernakService.ts"></script>
+</body>
+</html>

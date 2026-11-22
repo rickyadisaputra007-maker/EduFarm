@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Laporan - EduFarm</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <a href="dashboard.html" class="header-back">&larr;</a>
+    <h2>Laporan dan Sertifikat</h2>
+    <div class="header-spacer"></div>
+  </header>
+
+  <main class="page-container">
+    <h3>Ringkasan</h3>
+    
+    <div class="card" style="margin-bottom: 12px;">
+      <p>Total Data Ternak:</p>
+      <h2 id="total-ternak" style="color: var(--primary); margin: 5px 0;">0</h2>
+    </div>
+    
+    <div class="card" style="margin-bottom: 20px;">
+      <p>Skor Kuis Terakhir:</p>
+      <h2 id="skor-kuis" style="color: var(--primary); margin: 5px 0;">0</h2>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+    
+    <h3>Sertifikat Kelulusan</h3>
+    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 15px;">
+      Syarat: Memiliki data ternak dan Skor Kuis minimal 20.
+    </p>
+    
+    <button id="btn-sertifikat" class="btn" disabled>Memuat...</button>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item">Beranda</a>
+    <a href="data-ternak.html" class="nav-item">Ternak</a>
+    <a href="kuis.html" class="nav-item">Edukasi & Kuis</a>
+    <a href="profil.html" class="nav-item">Profil</a>
+  </nav>
+
+  <script type="module" src="/src/services/LaporanService.ts"></script>
+</body>
+</html>

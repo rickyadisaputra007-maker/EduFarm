@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Palet Warna Sesuai Referensi (Light & Clean) */
+  --primary: #4318FF;          /* Biru Utama */
+  --primary-light: #E9E3FF;    /* Biru Sangat Muda untuk background menu aktif */
+  --bg-body: #F4F7FE;          /* Latar belakang abu-abu kebiruan sangat terang */
+  --bg-card: #FFFFFF;          /* Putih bersih untuk kartu dan sidebar */
+  --text-main: #2B3674;        /* Biru Gelap untuk teks utama */
+  --text-muted: #A3AED0;       /* Abu-abu terang untuk teks sekunder */
+  --border-color: #E0E5F2;
+  
+  --accent-blue: #4379EE;
+  --accent-green: #05CD99;
+  --accent-yellow: #FFCE20;
+  --accent-orange: #FF9F43;
+  --accent-red: #EE5D50;
+  
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 18px 40px rgba(112, 144, 176, 0.12);
+  --shadow-hover: 0 20px 50px rgba(112, 144, 176, 0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden; 
+}
+
+/* =========================================
+   TAMPILAN MOBILE (Bawaan)
+   ========================================= */
+header {
+  background-color: var(--bg-body);
+  height: 70px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.header-logo { width: 36px; height: 36px; object-fit: contain; margin-right: 12px; }
+header h2 { font-size: 22px; font-weight: 800; color: var(--text-main); }
+
+.container, .page-container { padding: 20px; padding-bottom: 100px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+
+.menu-card {
+  background: var(--bg-card); padding: 20px; border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft); text-align: center; font-weight: 700;
+  color: var(--text-main); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 12px;
+  transition: all 0.3s ease; border: 1px solid #fff;
+}
+
+/* Animasi mengambang menu */
+.menu-card:hover, .menu-card:active {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.icon-box { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+.icon-blue { background: #E6F0FF; color: var(--accent-blue); }
+.icon-green { background: #E6FBF5; color: var(--accent-green); }
+.icon-yellow { background: #FFF9E6; color: var(--accent-yellow); }
+.icon-purple { background: #F4EFFF; color: #8F6CF6; }
+.menu-card div[style*="background-color: #FFE4E6"], .menu-card div[style*="background-color: #FFF3E0"] { 
+  background: #FFF0F0 !important; color: var(--accent-red) !important; 
+}
+
+/* FORM & INPUT */
+.form-box { background: var(--bg-card); padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); margin-bottom: 24px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 700; color: var(--text-main); }
+.form-group input, .form-group select { 
+  width: 100%; padding: 14px; border: 1px solid var(--border-color); 
+  border-radius: var(--radius-md); outline: none; font-size: 14px; 
+  background: var(--bg-body); color: var(--text-main); transition: 0.3s; 
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 0 3px var(--primary-light); }
+
+.btn { padding: 14px; background-color: var(--primary); color: white; border: none; border-radius: var(--radius-md); width: 100%; font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(67, 24, 255, 0.3); }
+
+/* CARD & DAFTAR DATA */
+.card-list { display: flex; flex-direction: column; gap: 15px; }
+.card { background: var(--bg-card); padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); border: 1px solid #fff; transition: transform 0.2s; }
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+.card strong { font-size: 16px; color: var(--text-main); }
+.card p { font-size: 13px; color: var(--text-muted); margin: 5px 0; }
+.card-sold { opacity: 0.7; border-left: 4px solid var(--accent-green); background: #FAFAFA; }
+
+/* Tombol Aksi Kecil */
+.card-actions { display: flex; gap: 10px; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color); }
+.btn-sm { padding: 10px 14px; font-size: 13px; font-weight: 600; border-radius: 8px; border: none; cursor: pointer; flex: 1; text-align: center; color: white; transition: all 0.2s ease; }
+.btn-edit { background-color: var(--accent-yellow); color: #2B3674; }
+.btn-jual { background-color: var(--accent-blue); }
+.btn-hapus { background-color: var(--accent-red); }
+.badge-terjual { display: inline-block; background-color: #E6FBF5; color: var(--accent-green); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+
+/* GRAFIK */
+.chart-box, .chart-container { background: var(--bg-card); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); border: 1px solid #fff; }
+.chart-container { display: flex; flex-direction: row; align-items: flex-end; justify-content: space-around; height: 200px; padding: 20px; margin-bottom: 20px;}
+.chart-bar-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; width: 25%; }
+.chart-bar { width: 100%; background-color: var(--accent-blue); border-radius: 6px 6px 0 0; transition: height 0.5s; min-height: 2px; }
+.chart-label { margin-top: 10px; font-size: 12px; color: var(--text-muted); font-weight: 700; }
+
+/* BOTTOM NAV MOBILE */
+.bottom-nav {
+  position: fixed; bottom: 15px; left: 15px; right: 15px; height: 70px;
+  background-color: #ffffff; display: flex; justify-content: space-around;
+  align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 100;
+  border-radius: 20px;
+}
+.nav-item { display: flex; flex-direction: column; align-items: center; font-size: 11px; color: var(--text-muted); text-decoration: none; font-weight: 700; gap: 4px; flex: 1; transition: 0.3s; }
+.nav-item.active { color: var(--primary); }
+
+/* =========================================
+   TAMPILAN DESKTOP (Sidebar Melayang)
+   ========================================= */
+@media (min-width: 768px) {
+  body { display: block; }
+  header { display: none !important; }
+
+  /* SIDEBAR PUTIH BERSIH */
+  .bottom-nav {
+    position: fixed; top: 20px; left: 20px; bottom: 20px; width: 260px; 
+    height: calc(100vh - 40px);
+    flex-direction: column; justify-content: flex-start; align-items: flex-start;
+    background: var(--bg-card); padding-top: 40px; border-radius: 20px; 
+    box-shadow: var(--shadow-soft); overflow: hidden; border: none;
+  }
+  
+  /* Judul di Sidebar */
+  .bottom-nav::before { 
+    content: 'EduFarm'; color: var(--primary); font-size: 28px; font-weight: 800; 
+    padding: 0 30px 40px 30px; display: block; 
+  }
+  
+  /* --- ANIMASI & DESAIN MENU SIDEBAR --- */
+  .nav-item { 
+    flex-direction: row; justify-content: flex-start; width: calc(100% - 30px); 
+    padding: 16px 20px; font-size: 15px; color: var(--text-muted); gap: 15px; 
+    margin-bottom: 10px; margin-left: 15px; border-radius: 12px; 
+    
+    /* Transisi halus untuk semua efek (warna, geser, bayangan) */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Ikon di dalam menu */
+  .nav-item .material-symbols-rounded { 
+    font-size: 24px; 
+    transition: transform 0.3s ease; /* Animasi khusus ikon */
+  }
+
+  /* 1. EFEK SAAT KURSOR DIARAHKAN (HOVER) */
+  .nav-item:hover { 
+    color: var(--primary); 
+    background-color: var(--bg-body); 
+    transform: translateX(8px); /* Menu bergeser ke kanan */
+  }
+  .nav-item:hover .material-symbols-rounded {
+    transform: scale(1.1) rotate(-5deg); /* Ikon membesar & miring sedikit */
+  }
+
+  /* 2. EFEK SAAT MENU SEDANG AKTIF (ACTIVE) */
+  .nav-item.active { 
+    background-color: var(--primary-light); /* Warna ungu muda */
+    color: var(--primary); 
+    font-weight: 800;
+    transform: translateX(0); /* Paksa posisi normal saat aktif */
+    box-shadow: inset 4px 0 0 var(--primary); /* Garis tebal di kiri */
+  }
+
+  /* Memastikan jika menu aktif di-hover, posisinya tidak bergeser aneh */
+  .nav-item.active:hover {
+    transform: translateX(0);
+    background-color: var(--primary-light);
+  }
+
+  /* KONTEN UTAMA */
+  .container, .page-container { 
+    margin-left: 300px; 
+    width: calc(100% - 300px); 
+    padding: 40px; 
+    display: flex; flex-direction: column; align-items: center; 
+  }
+  .container > *, .page-container > * { width: 100%; max-width: 900px; }
+  
+  .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+  .menu-card { flex-direction: row; text-align: left; padding: 24px; white-space: nowrap; }
+  .menu-card .icon-box { margin-bottom: 0; margin-right: 15px; flex-shrink: 0; }
+}
+/* =========================================
+   DESAIN HALAMAN LOGIN (SPLIT SCREEN MODERN)
+   ========================================= */
+body.login-page {
+  background-color: var(--bg-body) !important; 
+  display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; padding: 20px;
+}
+
+.login-container {
+  display: flex; flex-direction: row; background: white; border-radius: 30px; overflow: hidden;
+  box-shadow: var(--shadow-soft); width: 100%; max-width: 900px; min-height: 500px;
+}
+.login-brand-section {
+  flex: 1;
+  
+  /* --- GANTI BAGIAN BACKGROUND DI SINI --- */
+  /* Saya menambahkan lapisan biru transparan (linear-gradient) 
+     agar tulisan putih "EduFarm" tetap terbaca di atas gambar Anda */
+  background-image: 
+    linear-gradient(transparent), 
+    url('/assets/images/background.jpeg'); /* <-- Sesuaikan nama filenya */
+    
+  background-size: cover;       /* Agar gambar memenuhi seluruh kotak */
+  background-position: center;  /* Posisi gambar di tengah */
+  background-repeat: no-repeat; /* Gambar tidak diulang-ulang */
+  /* --------------------------------------- */
+
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 50px; 
+  color: white; 
+  text-align: center;
+}
+
+.login-logo { width: 130px; height: 130px; margin-bottom: 20px; object-fit: contain; }
+.login-title { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; letter-spacing: 1px; }
+.login-subtitle { font-size: 16px; color: rgba(255, 255, 255, 0.8); max-width: 300px; line-height: 1.6; }
+
+.login-form-section { flex: 1; display: flex; justify-content: center; align-items: center; padding: 50px; background: white; }
+.login-form-content { width: 100%; max-width: 350px; text-align: center; }
+
+#google-btn-container { display: flex; justify-content: center; background: transparent; padding: 0; }
+#google-btn-container iframe { box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-radius: 50px; }
+
+/* Tombol Logout Merah */
+.btn-merah { background-color: var(--accent-red) !important; color: white !important; box-shadow: 0 4px 12px rgba(238, 93, 80, 0.3); }
+.btn-merah:hover { background-color: #d1493e !important; }
+
+/* RESPONSIF UNTUK HP (LOGIN) */
+@media (max-width: 768px) {
+  .login-container { flex-direction: column; max-width: 400px; min-height: auto; }
+  .login-brand-section { padding: 40px 20px; }
+  .login-logo { width: 90px; height: 90px; }
+  .login-title { font-size: 32px; }
+  .login-form-section { padding: 40px 20px; }
+}
